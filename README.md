@@ -8,26 +8,26 @@ bias 를 추가한다.
 Bias 추가한 것을 더한다.
 
 ## 데이터 로더
-Method for getting a data loader from a csv file
-Create custom class for pytorch data set
-"Initialize DataFrame"
-'get total number of samples'
-'get data sample from dataset'
+Method for getting a data loader from a csv file   
+Create custom class for pytorch data set   
+Initialize DataFrame   
+get total number of samples   
+get data sample from dataset   
 
 ## 메인 함수
-Read in data frame created by EDA notebook
-separate music data into separate training and testing files
-get seperate dataframes with train and test data
-write these train and test data to separate csv file
-find number of artists and users being  used 1
-create data loaders for training and test data
-declare the size of the embeddings to be used
-Find the optimal learning rate with chich to begin training
-run model
-go to the next learning rate
-change the learning rate in the optimizer
-declare training constants
-declare loss criterion for the model
-create model and optimzer
-Create training loop to train thre recommender model on test data
+Read in data frame created by EDA notebook   
+separate music data into separate training and testing files   
+get seperate dataframes with train and test data   
+write these train and test data to separate csv file   
+find number of artists and users being  used 1   
+create data loaders for training and test data   
+declare the size of the embeddings to be used   
+Find the optimal learning rate with chich to begin training   
+run model   
+go to the next learning rate   
+change the learning rate in the optimizer   
+declare training constants   
+declare loss criterion for the model   
+create model and optimzer   
+Create training loop to train thre recommender model on test data   
 loop over the dataset multiple times
