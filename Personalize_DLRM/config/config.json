@@ -1,0 +1,61 @@
+{
+
+  "model_parameter":
+    {
+      "m_spa": 10,
+      "ln_bot_output_layer" : 10,
+      "arch_interaction_op" : "dot",
+      "arch_interaction_itself": false,
+      "sigmoid_bot":-1,
+      "sync_dense_params" : true,
+      "loss_threshold":0.0,
+      "ndevices": -1,
+      "qr_flag": false,
+      "qr_operation": "mult",
+      "qr_collisions": 4,
+      "qr_threshold":"200",
+      "md_flag" : false,
+      "md_threshold": 200,
+      "learning_rate" : 0.0005
+    },
+
+  "evaluate":
+    {
+      "best_gA_test" : 0,
+      "best_auc_test" : 0,
+      "total_time" : 0,
+      "total_loss" : 0,
+      "total_accu" : 0,
+      "total_iter" : 0,
+      "total_samp" : 0,
+      "k" : 0
+    },
+
+  "system":
+    {
+      "device": "cpu",
+      "model_save_path": "data/model/model.pth",
+      "parquet_train_file_path" :  "parquet_file"
+    },
+
+  "data":
+    {
+      "SEQ_LEN": 9,
+      "batch_size": 128,
+      "shuffle":true,
+      "num_workers":0,
+      "epoch": 10
+
+    },
+
+  "inference":
+    {
+      "using_gpu" : false,
+      "top_N" : 10,
+      "shuffle":false,
+      "num_workers":0,
+      "feeding_end" : "end"
+
+    }
+
+}
