@@ -1,4 +1,4 @@
-# Behavior Sequence Transformer with MovieLens
+# Behavior Sequence Transformer with MovieLens Using Keras
 ## MovieLens Dataset
 ```
 wget http://files.grouplens.org/datasets/movielens/ml-1m.zip
@@ -6,16 +6,11 @@ wget http://files.grouplens.org/datasets/movielens/ml-1m.zip
 ## Project Architecture
 ```
 .
-├── Readme.md
+
 ├── __init__.py
 ├── dataloader
 │   ├── __init__.py
-│   ├── __pycache__
-│   │   ├── __init__.cpython-37.pyc
-│   │   ├── movie_lens.cpython-37.pyc
-│   │   └── movie_lens_data_loader.cpython-37.pyc
 │   └── movie_lens.py
-├── dataset_prepare.ipynb
 ├── datasets
 │   ├── genres.csv
 │   ├── metadata.json
@@ -26,17 +21,13 @@ wget http://files.grouplens.org/datasets/movielens/ml-1m.zip
 │   │   └── users.dat
 │   ├── test_data.csv
 │   └── train_data.csv
-├── main.py
 ├── model
 │   ├── __init__.py
-│   ├── __pycache__
-│   │   ├── __init__.cpython-37.pyc
-│   │   ├── bst.cpython-37.pyc
-│   │   ├── bst_model.cpython-37.pyc
-│   │   └── custom_layers.cpython-37.pyc
 │   ├── bst.py
 │   └── custom_layers.py
-└── workspace.code-workspace
+├── Readme.md
+├── dataset_prepare.ipynb
+└── main.py
 ```
 ## Network Architecture
 ```
