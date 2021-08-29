@@ -1,0 +1,37 @@
+version: '3'
+services:
+  elasticsearch:
+    container_name: elasticsearch
+    image: elasticsearch:7.13.0
+    ports:
+     - 9200:9200
+     - 9300:9300
+    networks:
+     - default
+    volumes:
+     - ./elasticsearch:/usr/share/elasticsearch/data
+    environment:
+     - discovery.type=single-node
+     - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+     - TZ=Asia/Seoul
+    user: root
+    restart: always
+    privileged: true
+  kibana:
+    container_name: kibana
+    image: kibana:7.13.0
+    ports:
+     - 5601:5601
+    networks:
+     - default
+    environment:
+     ELASTICSERCH_UTL: http://elasticsearch:9200
+     ELASTICSEARCH_HOSTS: http://elasticsearch:9200
+    environment:
+     - TZ=Asia/Seoul
+    restart: always
+    privileged: true
+networks:
+  default:
+    external:
+      name: elastic
