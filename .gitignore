@@ -5,3 +5,5 @@
 __pycache__
 .vscode
 ml-1m.zip
+BERT4REC/artifacts
+lightning_logs
