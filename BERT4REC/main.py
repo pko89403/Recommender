@@ -99,47 +99,47 @@ def prediction(model, movies, item2idx, idx2item, seq_len, k=30):
     return out[:k]
 
 if __name__ == '__main__':
-    # test_all()
-    items = pd.read_csv('./ml-latest-small/movies.csv')
-    idx2item = {i+2 : v['title'] for i, v in items.iterrows()}   
-    idx2item[0], idx2item[1] = 'PAD', 'MASK'
-    item2idx =  {v: k for k, v in idx2item.items()}
+    test_all()
+    # items = pd.read_csv('./ml-latest-small/movies.csv')
+    # idx2item = {i+2 : v['title'] for i, v in items.iterrows()}   
+    # idx2item[0], idx2item[1] = 'PAD', 'MASK'
+    # item2idx =  {v: k for k, v in idx2item.items()}
 
-    total_items = len(item2idx)
+    # total_items = len(item2idx)
 
-    model = None
-    try:
-        model = BERT4REC(total_items=total_items,
-                        emb_dims=128,
-                        num_heads=4, 
-                        dropout_rate=.8,
-                        learning_rate=1e-8)
-        model = model.load_from_checkpoint('artifacts/lightning_logs/version_5/checkpoints/epoch=0-step=4.ckpt')
+    # model = None
+    # try:
+    #     model = BERT4REC(total_items=total_items,
+    #                     emb_dims=128,
+    #                     num_heads=4, 
+    #                     dropout_rate=.8,
+    #                     learning_rate=1e-8)
+    #     model = model.load_from_checkpoint('artifacts/lightning_logs/version_5/checkpoints/epoch=0-step=4.ckpt')
 
-    except Exception as e:
-        model = train(data_dir = './ml-latest-small/ratings.csv',
-                    save_dir = './artifacts',
-                    batch_size = 128, 
-                    epochs = 30, 
-                    total_items = total_items,
-                    seq_len = 120,
-                    emb_dims = 128, 
-                    num_heads = 4,
-                    dropout_rate = .8,
-                    learning_rate = 1e-3) 
+    # except Exception as e:
+    #     model = train(data_dir = './ml-latest-small/ratings.csv',
+    #                 save_dir = './artifacts',
+    #                 batch_size = 256, 
+    #                 epochs = 50, 
+    #                 total_items = total_items,
+    #                 seq_len = 120,
+    #                 emb_dims = 128, 
+    #                 num_heads = 4,
+    #                 dropout_rate = .8,
+    #                 learning_rate = 1e-2) 
 
     
 
-    test_result = test(model=model,
-                    data_dir = './ml-latest-small/ratings.csv',
-                    batch_size=128,
-                    seq_len=120)
-    print(test_result)
+    # test_result = test(model=model,
+    #                 data_dir = './ml-latest-small/ratings.csv',
+    #                 batch_size=128,
+    #                 seq_len=120)
+    # print(test_result)
 
 
-    test_movie_list = ["Harry Potter and the Sorcerer's Stone (a.k.a. Harry Potter and the Philosopher's Stone) (2001)",
-            "Harry Potter and the Chamber of Secrets (2002)",
-            "Harry Potter and the Prisoner of Azkaban (2004)",
-            "Harry Potter and the Goblet of Fire (2005)"]
+    # test_movie_list = ["Harry Potter and the Sorcerer's Stone (a.k.a. Harry Potter and the Philosopher's Stone) (2001)",
+    #         "Harry Potter and the Chamber of Secrets (2002)",
+    #         "Harry Potter and the Prisoner of Azkaban (2004)",
+    #         "Harry Potter and the Goblet of Fire (2005)"]
 
-    prediction(model, test_movie_list, item2idx, idx2item, 120, k=10)
+    # prediction(model, test_movie_list, item2idx, idx2item, 120, k=10)
