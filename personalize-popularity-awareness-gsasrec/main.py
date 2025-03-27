@@ -5,30 +5,6 @@ import argparse
 from pps_gsasrec import initialize_training, train
 
 
-"""
-DATASET_NAME = "/data02/user2playlist/train-241101-250201-cut3/*.parquet"
-TRACK_NAME = "/data02/user2playlist/tracks-meta-cut3/*.parquet"
-CHARACTER_NAME = "/data02/user2playlist/characters-cut3/*.parquet"
-
-BATCH_SIZE = 1024
-EMBEDDING_DIM_ID = 122
-EMBEDDING_DIM_GENRE = 22
-EMBEDDING_DIM_DOMAIN = 6
-EMBEDDING_DIM_YEAR = 12
-HIDDEN_DIM = 64
-NUM_HEADS = 1
-NUM_BLOCKS = 4
-GBCE_T = 0.75
-DROPOUT_RATE = 0.2  # 현재 0.5에서 감소
-DEVICE = "cuda:0"
-SEQUENCE_LENGTH = 100
-N_NEGATIVES = 128  # IN-BATCH NEGATIVES가 추가됨(BATCH_SIZE만큼의 추가 샘플)
-MAX_GENRES_PER_TRACK = 5
-IPS_TEMPERATURE = 0.75  # 값이 작을수록 인기 아이템 쏠림 증가, 클수록 균등 분포에 가까워짐
-PPS_EPS = 0.01
-NUM_WORKERS=15
-"""
-
 def parse_args():
     parser = argparse.ArgumentParser(description="Train GSASRec model with given parameters")
     # 파일 경로 인자
